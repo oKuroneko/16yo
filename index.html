@@ -1,10 +1,144 @@
 <!DOCTYPE html>
-<html>
-  <title>Happy Birthdayy</title>
-  <head>
-    
-  </head>
-  <body>
-    
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 16th Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to top, #ffdde1, #ee9ca7);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px #ff69b4;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .cake {
+      position: relative;
+      width: 200px;
+      height: 150px;
+      background: #f88ca2;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      animation: popUp 1s ease-out;
+    }
+
+    .layer {
+      position: absolute;
+      background: #f1a6c1;
+      height: 50px;
+      width: 200px;
+      top: 0;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .layer.middle {
+      top: 50px;
+      background: #ffb6c1;
+    }
+
+    .layer.bottom {
+      top: 100px;
+      background: #ffa6a6;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .candle {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 30px;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    .flame {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      background: orange;
+      border-radius: 50%;
+      animation: flicker 0.2s infinite alternate;
+      box-shadow: 0 0 10px 4px orange;
+    }
+
+    .number {
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+      color: white;
+      text-shadow: 2px 2px #ff69b4;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(1); }
+      100% { transform: translateX(-50%) scale(1.1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translate(-50%, 20px); }
+      100% { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    @keyframes popUp {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Happy 16th Birthday!</h1>
+  <h3>Giska Miladanar Az-Zahra</h3>
+
+  <div class="cake">
+    <div class="number">16</div>
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+    <div class="layer top"></div>
+    <div class="layer middle"></div>
+    <div class="layer bottom"></div>
+  </div>
+
+  <button onclick="playMusic()">Tekan ini!</button>
+
+<audio id="backsound" loop>
+  <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function playMusic() {
+    const audio = document.getElementById('backsound');
+    audio.play();
+  }
+</script>
+
+</body>
 </html>
